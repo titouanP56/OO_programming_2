@@ -53,32 +53,6 @@ class Point {
         }
 
 
-        void saisir(){
-            std::cout << "Saisie des coordonnées du Point (x, y, z):" << std::endl;
-
-            std::cout << "Entrez la coordonnée X: ";
-            if (!(std::cin >> x)) {
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Saisie invalide pour X. La valeur X n'a pas été modifiée." << std::endl;
-            }
-
-            std::cout << "Entrez la coordonnée Y: ";
-            if (!(std::cin >> y)) {
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Saisie invalide pour Y. La valeur Y n'a pas été modifiée." << std::endl;
-            }
-
-            std::cout << "Entrez la coordonnée Z: ";
-            if (!(std::cin >> z)) {
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Saisie invalide pour Z. La valeur Z n'a pas été modifiée." << std::endl;
-            }
-
-        }
-
         void afficher() {
             std::cout << "Point ( x : "<<x<<", y : "<<y<<", z : "<<z<<" )" << std::endl;
         }
@@ -102,3 +76,5 @@ class Point {
 
 
 };
+
+int Point::_nombreInstances = 0; 

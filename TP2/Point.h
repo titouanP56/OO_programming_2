@@ -4,9 +4,9 @@
 
 class Point {
     private:
-        int x;
-        int y;
-        int z;
+        double x;
+        double y;
+        double z;
 
         static int _nombreInstances;
 
@@ -14,7 +14,7 @@ class Point {
 
         Point::Point() : x(0), y(0), z(0) {} 
 
-        Point::Point(int x, int y, int z) {
+        Point::Point(double x, double y, double z) {
             this->x = x;
             this->y = y;
             this->z = z;
@@ -51,6 +51,7 @@ class Point {
         void Point::setZ(int new_z) {
             z = new_z;
         }
+
 
         void saisir(){
             std::cout << "Saisie des coordonnées du Point (x, y, z):" << std::endl;
@@ -89,10 +90,14 @@ class Point {
             return sqrt(dx * dx + dy * dy + dz * dz);
         }
 
-        void translater (int dx, int dy, int dz){
+        void translater (double dx, double dy, double dz){
             x += dx;
             y += dy;
             z += dz;
+        }
+
+        bool egal (const Point & point){
+            return this->x == point.x && this->y == point.y && this ->z == point.z;
         }
 
 

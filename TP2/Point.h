@@ -12,16 +12,16 @@ class Point {
 
     public:
 
-        Point::Point() : x(0), y(0), z(0) {} 
+        Point() : x(0), y(0), z(0) {} 
 
-        Point::Point(double x, double y, double z) {
+        Point(double x, double y, double z) {
             this->x = x;
             this->y = y;
             this->z = z;
             _nombreInstances++;
         }
 
-        Point::Point (const Point & p){
+        Point (const Point & p){
 	        this->x = p.x;
 	        this->y = p.y;
             this->z = p.z;
@@ -32,23 +32,23 @@ class Point {
             _nombreInstances--;
         }
 
-        int Point::getX() const {
+        int getX() const {
             return x;
         }
-        int Point::getY() const {
+        int getY() const {
             return y;
         }
-        int Point::getZ() const {
+        int getZ() const {
             return z;
         }
 
-        void Point::setX(int new_x) {
+        void setX(int new_x) {
             x = new_x;
         }
-        void Point::setY(int new_y) {
+        void setY(int new_y) {
             y = new_y;
         }
-        void Point::setZ(int new_z) {
+        void setZ(int new_z) {
             z = new_z;
         }
 

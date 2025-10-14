@@ -99,6 +99,8 @@ class RDV {
             std::cin >> min;
             heure = Heure(h, min);
 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
             saisieLieu();
             saisieParticipants();
             

@@ -75,5 +75,31 @@ class Date {
         bool egald(const Date & other_date){
             return this->jour == other_date.jour && this->mois == other_date.mois && this->annee == other_date.annee;
         }
+
+
+        bool supp (const Date & other_date){
+            if(this->annee > other_date.annee){
+                return true;
+            }
+            else if(this->annee < other_date.annee){
+                return false;
+            }
+            else{
+                if(this->mois > other_date.mois){
+                    return true;
+                }
+                else if(this->mois < other_date.mois){
+                    return false;
+                }
+                else{
+                    if(this->jour > other_date.jour){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+            }
+        }
 };
 

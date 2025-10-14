@@ -107,6 +107,10 @@ class RDV {
             std::cout << "\n--- Rendez-vous créé avec succès ! ---" << std::endl;
         }
 
+        Date getDate() const {
+            return this->date;
+        }
+
 
         void setDate(Date new_date){
             date = new_date;

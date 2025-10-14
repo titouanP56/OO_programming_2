@@ -2,11 +2,15 @@
 #include <limits>
 #include <cmath>
 
-#include "heure.cpp"
-#include "date.cpp"
+#include "heure.h" 
+#include "date.h"
+#include "RDV.h"
 
 
 int main(int argc, char const *argv[]){
+
+    Date d1 = Date(50, 2, 2005);
+    Date d2 = Date(14, 2, 2005);
 
     d1.afficher();
     d2.afficher();
@@ -21,7 +25,10 @@ int main(int argc, char const *argv[]){
               << d1.getAnnee() << ")" 
               << std::endl; 
 
-
+              
+    Heure h1 = Heure();
+    Heure h2 = Heure(0, 60);
+    Heure h3 = Heure(8, 49);
 
     h1.afficher();
     h2.afficher();
@@ -36,5 +43,9 @@ int main(int argc, char const *argv[]){
               << std::endl; 
 
 
+    RDV rdv = RDV();
+    rdv.affiche();
+    rdv.saisie();
+    rdv.affiche();
 
 }

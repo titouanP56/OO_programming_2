@@ -2,6 +2,7 @@
 #include <limits>
 #include <cmath>
 
+#pragma once
 
 class Heure {
     private:
@@ -55,6 +56,11 @@ class Heure {
             if(new_minute <= 59 && new_minute >= 0){
                 minute = new_minute;
             }
+        }
+
+
+        bool egalh(const Heure & other_heure){
+            return this->heure == other_heure.heure && this->minute == other_heure.minute;
         }
 
     };

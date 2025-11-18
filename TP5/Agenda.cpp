@@ -54,7 +54,7 @@ void Agenda::ajouteRDV(const RDV& new_rdv) {
 
         if (new_rdv.getDate().supp(courant->getRDV().getDate())){
 
-            new_noeud->setSuivant(courant)
+            new_noeud->setSuivant(courant);
 
         }
 

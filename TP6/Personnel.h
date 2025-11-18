@@ -12,6 +12,7 @@ class Personnel : public Personne {
         Personnel(string nom, string prenom, float salaire = 0.0);
 
         void setSalaire(float new_salaire);
+        float getSalaire();
 
         void affiche();
 

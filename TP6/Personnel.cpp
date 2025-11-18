@@ -15,6 +15,10 @@ float Personnel::calculSalaire(){
     return salaire;
 }
 
+float Personnel::getSalaire(){
+    return salaire;
+}
+
 void Personnel::affiche() {
     Personne::affiche();
     std::cout << "  Salaire de base : " << salaire << " EUR" << std::endl;

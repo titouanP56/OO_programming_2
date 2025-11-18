@@ -1,5 +1,4 @@
 #ifndef PERSONNEL_H
-
 #define PERSONNEL_H
 
 #include "Personne.h"

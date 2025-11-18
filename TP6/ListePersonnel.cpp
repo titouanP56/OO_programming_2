@@ -5,21 +5,41 @@
 
 ListePersonnel::ListePersonnel(){
     nb = 0;
+    taille = 10;
 
-    for (int i = 0; i<100; i++){
-        tab[i] = nullptr;
-    }
+    tab = new Personnel*[taille];
 }
 
 
-void ListePersonnel::ajoutPersonnel(Personnel* new_pers){
-    if (nb < 100){
-        tab[nb] = new_pers;
-        nb++;
+ListePersonnel::~ListePersonnel(){
+    delete[] tab;
+}
+
+
+void ListePersonnel::doubleTableau(){
+    int nouvelleTaille = taille * 2;
+
+    Personnel** nouveauTab = new Personnel*[nouvelleTaille];
+
+    for (int i = 0; i < nb; i++) {
+        nouveauTab[i] = tab[i];
     }
-    else{
-        cout<<"La liste est pleine"<<endl;
+
+    delete[] tab;
+
+    tab = nouveauTab;
+    taille = nouvelleTaille;
+}
+
+
+
+void ListePersonnel::ajoutPersonnel(Personnel* p) {
+    if (nb >= taille) {
+        doubleTableau();
     }
+
+    tab[nb] = p;
+    nb++;
 }
 
 

@@ -7,12 +7,17 @@
 
 class ListePersonnel {
     private :
-        Personnel* tab[100];
+        Personnel** tab;
         int nb;
+        int taille;
+
+        void doubleTableau();
 
     public :
 
         ListePersonnel();
+
+        ~ListePersonnel();
 
         void ajoutPersonnel(Personnel* new_personnel);
 

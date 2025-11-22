@@ -2,22 +2,22 @@
 #define PERSONNEL_H
 
 #include "Personne.h"
-#include <string>
 
 class Personnel : public Personne {
     private:
         float salaire;
 
     public:
+        Personnel() : Personne() { salaire = 0; };
+
         Personnel(string nom, string prenom, float salaire = 0.0);
 
         void setSalaire(float new_salaire);
         float getSalaire();
 
-        void affiche();
+        virtual void affiche();
 
-        float calculSalaire();
-
+        virtual float calculSalaire();
 };
 
 #endif

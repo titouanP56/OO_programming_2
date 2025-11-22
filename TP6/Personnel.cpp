@@ -11,8 +11,8 @@ void Personnel::setSalaire(float new_salaire) {
     salaire = new_salaire;
 }
 
-float Personnel::calculSalaire(){
-    return salaire;
+float Personnel::calculSalaire() {
+    return 0.0f;
 }
 
 float Personnel::getSalaire(){

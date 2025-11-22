@@ -1,0 +1,29 @@
+
+1. COMPARAISON : LISTE AVEC POINTEURS VS SANS POINTEURS
+
+Version AVEC Pointeurs (Personnel* tab[]) - La version correcte
+   - Principe : Le tableau stocke des adresses mémoire.
+   - Avantage : Il peut pointer vers n'importe quel objet dérivé (Enseignant, Admin) sans modifier l'objet lui-même.
+   - Polymorphisme : Grâce aux fonctions virtuelles, le programme regarde ce qu'il y a au bout du pointeur. Si c'est un Enseignant, il appelle calculSalaire() de l'Enseignant.
+   - Résultat : Les salaires sont corrects et les attributs spécifiques (grade, bureau) sont conservés.
+
+Version SANS Pointeurs (Personnel tab[]) - La version "piège"
+   - Principe : Le tableau stocke des instances concrètes de type 'Personnel'.
+   - Problème (Le "Slicing") : Quand on ajoute un Enseignant dans ce tableau, seule la partie "Personnel" (nom, prénom) est copiée. La partie "Enseignant" (grade, prime) est découpée et perdue car elle ne rentre pas dans la case mémoire.
+   - Résultat : Le polymorphisme ne marche pas. C'est toujours la méthode de base de 'Personnel' qui est appelée. Les calculs de salaires sont donc faux.
+
+
+2. CONCEPTS CLÉS ABORDÉS DANS LE TP
+
+Héritage
+   Nous avons créé une hiérarchie où 'Eleve' et 'Personnel' héritent des attributs communs (nom, adresse) de 'Personne'. Cela évite la duplication de code.
+
+Fonctions Virtuelles
+   En ajoutant le mot-clé 'virtual' devant 'affiche()' et 'calculSalaire()', nous disons au compilateur : "Ne décide pas quelle fonction appeler maintenant. Attends l'exécution pour voir quel est le type réel de l'objet." C'est ce qui permet la liaison dynamique.
+
+Classe Abstraite
+   La classe 'Personnel' sert de modèle général mais ne représente personne de concret (on est soit Admin, soit Enseignant).
+   Nous l'avons rendue abstraite en déclarant 'virtual float calculSalaire() = 0;'. Cela interdit la création d'un objet 'Personnel' seul et force les classes filles à définir leur propre calcul de salaire.
+
+Gestion Dynamique
+   Nous avons remplacé le tableau statique 'tab[100]' par un pointeur 'Personnel** tab' alloué dynamiquement (new). Cela permet d'agrandir la liste (méthode doubleTableau) si le nombre d'employés dépasse la capacité initiale.

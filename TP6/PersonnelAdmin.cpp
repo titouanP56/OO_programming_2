@@ -25,16 +25,13 @@ float PersonnelAdmin::getTaux() const {
 }
 
 
-
 float PersonnelAdmin::calculSalaire() {
-    float salaire_base = Personnel::calculSalaire();
-    return salaire_base + (heuresSup * taux);
+    return getSalaire() + (heuresSup * taux);
 }
 
 void PersonnelAdmin::affiche() {
     Personnel::affiche();
-    
     std::cout << "    Heures Sup. : " << heuresSup 
               << "h (au taux de " << taux << ")" << std::endl;
-    std::cout << "  > Salaire Total Calcule : " << this->calculSalaire() << " EUR" << std::endl;
+        std::cout << "  > Salaire Total Calcule : " << this->calculSalaire() << " EUR" << std::endl;
 }

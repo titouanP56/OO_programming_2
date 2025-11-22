@@ -22,9 +22,12 @@ void EnseignantPermanent::setPrimeMensuelle(float p) { primeMensuelle = p; }
 float EnseignantPermanent::getPrimeMensuelle() const { return primeMensuelle; }
 
 
+#include "EnseignantPermanent.h"
+#include <iostream>
+
+
 float EnseignantPermanent::calculSalaire(){
-    float salaire_base = Personnel::calculSalaire();
-    return salaire_base + (grade * primeMensuelle) / 100.0f;
+    return getSalaire() + (grade * primeMensuelle) / 100.0f;
 }
 
 void EnseignantPermanent::affiche() {

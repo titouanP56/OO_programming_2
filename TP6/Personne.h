@@ -1,23 +1,21 @@
+#ifndef PERSONNE_H
+#define PERSONNE_H
+
 #include <iostream>
-#include <limits>
-#include <cmath>
 #include <string>
 using namespace std;
 
-#pragma once
-
-
 class Personne {
-
-    private:
+    protected: 
         string nom;
         string prenom;
         string telephone;
         string adresse;
 
     public:
+        Personne() {};
 
-        Personne(string nom, string prenom);
+        Personne(string nom, string prenom, string adresse = "", string telephone = "");
 
         string getNom();
         string getPrenom();
@@ -29,6 +27,7 @@ class Personne {
         void setTelephone(string new_tel);
         void setAdresse(string new_addr);
 
-        void affiche();
+        virtual void affiche(); 
 };
 
+#endif

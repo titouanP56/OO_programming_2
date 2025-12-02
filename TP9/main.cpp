@@ -19,7 +19,6 @@ void fct (int a, float b) {
 
 template <class T> T somme(T tab[], int taille) {
     T res = 0;
-    cout<<res<<endl;
     for (int i = 0; i < taille; i++){
         res += tab[i];
     }
@@ -109,9 +108,6 @@ public:
 
 
 
-
-
-
 int main () {
     int n=0, p=0, q =0;
     float x=0.0 , y =0.0;
@@ -135,12 +131,14 @@ int main () {
 
     int table1[] = {2,3,4,1};
     float table2[] = {1.5,1,0.5,2,2.5};
+    char mot[] = "blablo";
 
     int* table = new int[5]{0,9,3,5,7};
     Vecteur<int> ve(5, table);
 
     cout << "Somme int; "<<somme(table1, 4)<<endl;
     cout << "Somme float; "<<somme(table2, 5)<<endl;
+    cout << "Somme char; "<<somme(mot, 6)<<endl;
 
     cout << "Min int; "<<min_tab(table1, 4)<<endl;
     cout << "Min float; "<<min_tab(table2, 5)<<endl;

@@ -3,11 +3,10 @@
 
 
 
-Personne::Personne(string nom2, string prenom2){
+Personne::Personne(string nom2, string prenom2, string adresse = "", string telephone = ""){
     nom = nom2;
     prenom = prenom2;
-    telephone = "";
-    adresse = "";
+    
 }
 
 

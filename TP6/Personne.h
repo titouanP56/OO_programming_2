@@ -13,7 +13,8 @@ class Personne {
         string adresse;
 
     public:
-        Personne() {};
+
+        Personne(){}
 
         Personne(string nom, string prenom, string adresse = "", string telephone = "");
 
